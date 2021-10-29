@@ -171,6 +171,7 @@ contract SupplyChain {
     items[_upc].originFarmLatitude = _originFarmLatitude;
     items[_upc].originFarmLongitude = _originFarmLongitude;
     items[_upc].productNotes = _productNotes;
+    items[_upc].productID = upc + sku;
     // Increment sku
     sku = sku + 1;
     // Emit the appropriate event
@@ -211,6 +212,7 @@ contract SupplyChain {
   verifyCaller(msg.sender)
   {
     // Update the appropriate fields
+    items[_upc].productPrice = _price;
     items[_upc].itemState = State.ForSale;
     // Emit the appropriate event
     emit ForSale(_upc);
@@ -261,10 +263,10 @@ contract SupplyChain {
     {
     // Update the appropriate fields - ownerID, retailerID, itemState
     items[_upc].ownerID = msg.sender;
-    items[_upc].retailerID = msg.sender; // ToDo: how to access retailer?
+    items[_upc].retailerID = msg.sender;
     items[_upc].itemState = State.Received;
     // Emit the appropriate event
-    emit Shipped(_upc);
+    emit Received(_upc);
   }
 
   // Define a function 'purchaseItem' that allows the consumer to mark an item 'Purchased'
@@ -276,7 +278,7 @@ contract SupplyChain {
     {
     // Update the appropriate fields - ownerID, consumerID, itemState
     items[_upc].ownerID = msg.sender;
-    items[_upc].consumerID = msg.sender; // ToDo: ??? check this value
+    items[_upc].consumerID = msg.sender;
     items[_upc].itemState = State.Purchased;
     // Emit the appropriate event
     emit Purchased(_upc);
@@ -325,8 +327,7 @@ contract SupplyChain {
   uint    productID,
   string  productNotes,
   uint    productPrice,
-  // ToDo: check if state is better
-  State    itemState,
+  uint itemState,
   address distributorID,
   address retailerID,
   address consumerID
@@ -338,7 +339,7 @@ contract SupplyChain {
     productID = items[_upc].productID;
     productNotes = items[_upc].productNotes;
     productPrice = items[_upc].productPrice;
-    itemState = items[_upc].itemState;
+    itemState = uint(items[_upc].itemState);
     distributorID = items[_upc].distributorID;
     retailerID = items[_upc].retailerID;
     consumerID = items[_upc].consumerID;
