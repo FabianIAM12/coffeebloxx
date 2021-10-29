@@ -1,5 +1,5 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic = "catalog ship oil armed license illegal bulb crazy elite judge vibrant daughter";
+var mnemonic = "";
 
 module.exports = {
   networks: {
