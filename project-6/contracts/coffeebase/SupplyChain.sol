@@ -223,16 +223,16 @@ contract SupplyChain {
     // Call modifier to check if upc has passed previous supply chain stage
     forSale(_upc)
     // Call modifer to check if buyer has paid enough
-    paidEnough(msg.value)
+    paidEnough(items[_upc].productPrice)
     // Call modifer to send any excess ether back to buyer
     verifyCaller(msg.sender)
     {
     // Update the appropriate fields - ownerID, distributorID, itemState
      items[_upc].ownerID = msg.sender;
-     items[_upc].distributorID = msg.sender; // ToDo ???
+     items[_upc].distributorID = msg.sender;
      items[_upc].itemState = State.Sold;
     // Transfer money to farmer
-    items[_upc].originFarmerID.transfer(msg.value);
+    msg.sender.transfer(items[_upc].productPrice);
     // emit the appropriate event
     emit Sold(_upc);
   }
