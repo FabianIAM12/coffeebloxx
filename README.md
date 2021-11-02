@@ -15,19 +15,15 @@ The DApp User Interface when running should look like...
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
 Please make sure you've already installed ganache-cli, Truffle and enabled MetaMask extension in your browser.
 
-```
-Give examples (to be clarified)
-```
-
 ### Installing
 
-> The starter code is written for **Solidity v0.4.24**. At the time of writing, the current Truffle v5 comes with Solidity v0.5 that requires function *mutability* and *visibility* to be specified (please refer to Solidity [documentation](https://docs.soliditylang.org/en/v0.5.0/050-breaking-changes.html) for more details). To use this starter code, please run `npm i -g truffle@4.1.14` to install Truffle v4 with Solidity v0.4.24. 
+> The code is written for **Solidity v0.4.24**. At the time of writing, the current Truffle v5 comes with Solidity v0.5 that requires function *mutability* and *visibility* to be specified (please refer to Solidity [documentation](https://docs.soliditylang.org/en/v0.5.0/050-breaking-changes.html) for more details). To use this starter code, please run `npm i -g truffle@4.1.14` to install Truffle v4 with Solidity v0.4.24. 
 
 A step by step series of examples that tell you have to get a development env running
 
@@ -92,34 +88,36 @@ In a separate terminal window, launch the DApp:
 npm run dev
 ```
 
-## Built With
+## Program versions
 
-* [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
-* [IPFS](https://ipfs.io/) - IPFS is the Distributed Web | A peer-to-peer hypermedia protocol
-to make the web faster, safer, and more open.
-* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
+node (v14.15.3)
+As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications.
 
-## Acknowledgments
+Truffle (v4.1.14):
+Truffle is a development environment, testing framework and asset pipeline for Ethereum. The biggest benefits for this project:
+- Built-in smart contract compilation
+- Automated contract testing
+- Network management for deploying to many public & private networks
 
-* Solidity
-* Ganache-cli
-* Truffle
-* IPFS
+web3 (v1.2.1)
+The web3.js library is a collection of modules that contain functionality for the ethereum ecosystem.
+- It provides functionality to interact with the ethereum blockchain through an browser interface.
+- Connects with a wallet provider like metamask.
 
 ## The contract
 
 Is available on the rinkeby testnet:
+
 https://rinkeby.etherscan.io/address/0x9c361fe77722f7f3396ef32df788e81e1aeb14d5
 
-## Program version numbers
-node version number
-v14.15.3
+Example Transaction Hash: 
 
-Truffle version number
-v4.1.14
+0x5eb8b002b2259ef136e7e53c945c21f130d46ccb4b20fc7a417a239a77af182d
 
-web3 version number
-v1.2.1
+## Built With
+
+* [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
+* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
 ## UML Documents
 
